@@ -5,7 +5,8 @@ ruby '2.6.3'
 
 # Using haml for clean html/ruby code
 gem "haml"
-
+# Stylesheets
+gem "twitter-bootstrap-rails", :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
