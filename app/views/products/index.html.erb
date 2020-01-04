@@ -2,12 +2,12 @@
   <table class="table table-striped table-dark text-center">
     <thead>
       <tr>
-        <td>Name</td>
-        <td>Description</td>
-        <td>Department</td>
-        <td>Price</td>
-        <td>Amount</td>
-        <td> </td>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Department</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th> </th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +18,20 @@
           <td>product departament</td>
           <td><%= product.price %></td>
           <td><%= product.amount %></td>
-          <td></td>
+          <td>
+            <div class="btn-group">
+              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Action
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </td>
         </tr>
       <% end %>
     </tbody>

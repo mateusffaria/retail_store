@@ -12,6 +12,11 @@
   <body class="backgroundColor">
     <%= render partial: "layouts/navbar" %>
     <div class="container">
+      <% if flash[:notice] %>
+        <div class="alert alert-success" role="alert">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>
