@@ -1,0 +1,11 @@
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= product.description %></td>
+    <td>product departament</td>
+    <td><%= product.price %></td>
+    <td><%= product.amount %></td>
+    <td><%= link_to "Edit", edit_product_path(product), class:"btn btn-info btn-sm" %></td>
+    <td><%= button_to "Remove", product, method: :delete, class:"btn btn-danger btn-sm", data: {confirm: "Are you sure do you want to remove #{product.name}?"} %></td>
+  </tr>
+<% end %>
