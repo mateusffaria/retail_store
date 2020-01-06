@@ -1,25 +1,36 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Departments</h1>
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table table-striped table-dark text-center">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Created at</th>
+          <th>Updated at</th>
+          <th></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @departments.each do |department| %>
+          <tr>
+            <td><%= department.name %></td>
+            <td><%= department.created_at %></td>
+            <td><%= department.updated_at %></td>
+            <td>
+              <div class="ajust-buttons">
+                <%= link_to 'Show', department, class: 'btn btn-default' %>
+                <p class="separator">|</p>
+                <%= link_to 'Edit', edit_department_path(department), class: 'btn btn-info' %>
+                <p class="separator">|</p>
+                <%= link_to 'Destroy', department, method: :delete, data: { confirm: "Are you sure do you want to remove #{department.name}?" }, class: 'btn btn-danger' %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
 
-  <tbody>
-    <% @departments.each do |department| %>
-      <tr>
-        <td><%= link_to 'Show', department %></td>
-        <td><%= link_to 'Edit', edit_department_path(department) %></td>
-        <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Department', new_department_path %>
+<%= link_to 'New Department', new_department_path, class: "btn btn-default"%>
+</div>

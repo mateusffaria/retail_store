@@ -1,17 +1,29 @@
-<%= form_with(model: department, local: true) do |form| %>
-  <% if department.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
+<div class="form-background">
+  <div class="form-content">
+    <%= form_with(model: @department, local: true) do |form| %>
+      <% if @department.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@department.errors.count, "error") %> prohibited this department from being saved:</h2>
 
-      <ul>
-      <% department.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% @department.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <%= form.label :name %>
+            <%= form.text_field :name, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+        <%= form.submit name, class: "btn btn-success" %>
+        <%= link_to "Cancel", departments_path, class: "btn btn-primary " %>
+    <% end %>
   </div>
-<% end %>
+</div>

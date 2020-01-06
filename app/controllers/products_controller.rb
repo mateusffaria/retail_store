@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @departments = Department.all
   end
 
   def create
@@ -22,7 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-
+    @departments = Department.all
   end
 
   def search
@@ -51,7 +52,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :amount, :price)
+    params.require(:product).permit(:name, :description, :amount, :price, :department_id)
   end
 
   def set_product

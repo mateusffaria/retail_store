@@ -1,7 +1,7 @@
 <%= nav_bar brand: "Retail Store 1.0", brand_link: root_url do %>
   <%= menu_group do %>
     <%= menu_item "Create a new product", new_product_path %>
-    <%= menu_item "Departments", "#" %>
+    <%= menu_item "Departments", departments_path %>
   <% end %>
 
   <%= form_tag find_product_path, method: :get, class:"navbar-form navbar-right" do %>

@@ -1,6 +1,3 @@
 <h1>Editing Department</h1>
 
-<%= render 'form', department: @department %>
-
-<%= link_to 'Show', @department %> |
-<%= link_to 'Back', departments_path %>
+<%= render partial:'form', department: @department, locals: {name: "Update department"} %>

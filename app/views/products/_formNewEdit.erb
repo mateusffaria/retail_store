@@ -37,6 +37,15 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <%= form.label :department %>
+            <%= form.collection_select :department_id, @departments, :id, :name, {}, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+
       <%= form.submit name, class: "btn btn-success" %>
       <%= link_to "Cancel", root_url, class: "btn btn-primary " %>
     <% end %>

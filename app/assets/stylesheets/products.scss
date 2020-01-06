@@ -48,3 +48,23 @@ h1{
   padding: 1rem;
   border-radius: 2rem;
 }
+
+.ajust-buttons{
+  display: flex;
+  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.separator{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  align-self: center;
+}
+
+.align-right{
+  justify-content: right !important;
+}
