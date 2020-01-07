@@ -10,6 +10,8 @@ class DepartmentsController < ApplicationController
   # GET /departments/1
   # GET /departments/1.json
   def show
+    products = Product.all
+    @products_with_this_department = products.where(department_id: @department)
   end
 
   # GET /departments/new
@@ -54,10 +56,18 @@ class DepartmentsController < ApplicationController
   # DELETE /departments/1
   # DELETE /departments/1.json
   def destroy
-    @department.destroy
+    @products = Product.all
+    @departments = Department.all
     respond_to do |format|
-      format.html { redirect_to departments_url, notice: 'Department was successfully destroyed.' }
-      format.json { head :no_content }
+      if(!@products.find_by_department_id @department.id)
+        @department.destroy
+        format.html { redirect_to departments_url, notice: 'Department was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        @message = "Department can't be destroyed because have some products linked them"
+        format.html { render :index}
+        format.json { render json: @message, status: :unprocessable_entity }
+      end
     end
   end
 

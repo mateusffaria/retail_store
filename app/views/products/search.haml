@@ -1,0 +1,12 @@
+.table-responsive
+  %table.table.table-striped.table-dark.text-center
+    %thead
+      %tr
+        %th Name
+        %th Description
+        %th Department
+        %th Price
+        %th Amount
+        %th{colspan: "2"}
+    %tbody
+      = render partial: 'table'
