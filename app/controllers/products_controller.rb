@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "Product successfully created"
       redirect_to new_product_path
     else
+      @departments = Department.all
       render :new
     end
   end
